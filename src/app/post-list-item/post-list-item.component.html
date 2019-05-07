@@ -1,0 +1,21 @@
+<li 
+  class="list-group-item list-group-item-success"
+  [ngClass]="{'list-group-item': true,
+              'list-group-item-success' : postLoveIts > 0,
+              'list-group-item-danger' : postLoveIts < 0,
+              'list-group-item-primary' : postLoveIts === 0}">
+
+  <h2>{{ postTitle }}</h2>
+  <em>{{ postCreatedAt | date:'dd/MM/yyyy, h:mm a' }}</em>
+
+  <p>{{ postContent }}</p>
+  <p><em>Like : {{ postLoveIts }}</em></p>
+
+  <button 
+    class="btn btn-success"
+    (click)="ILike()">Love !!!</button> 
+        
+  <button 
+    class="btn btn-danger"
+    (click)="IDontLike()">Don't love !!!</button>
+</li>
